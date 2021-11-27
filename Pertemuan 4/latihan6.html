@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><center><p>Nilai I</p></center></td>
+            <td></td>
+            <td><center><p>Nilai II</p></center></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="field1"/></td>
+            <td>
+                <select id="select">
+                    <option value="1">+</option>
+                    <option value="2">-</option>
+                    <option value="3">*</option>
+                    <option value="4">/</option>
+                </select>
+            </td>
+            <td><input type="number" id="field2"/></td>
+            <td><button id="submit">submit</button></td>
+        </tr>
+    </table>
+    <h1 id="result"></h1>
+    <script>
+        var field1 = document.getElementById('field1');
+        var field2 = document.getElementById('field2');
+        var submit = document.getElementById('submit');
+        var result = document.getElementById('result');
+    
+        submit.addEventListener('click', function(){
+            var field1 = document.getElementById('field1').value;
+            var field2 = document.getElementById('field2').value;
+            var operator = document.getElementById('select').value;
+            var hasil = 0;
+    
+            switch(operator){
+                case '1':
+                    hasil = parseInt(field1) + parseInt(field2);
+                    break;
+                case '2':
+                    hasil = parseInt(field1) - parseInt(field2);
+                    break;
+                case '3':
+                    hasil = parseInt(field1) * parseInt(field2);
+                    break;
+                case '4':
+                    hasil = parseInt(field1) / parseInt(field2);
+                    break;
+            }
+    
+            result.innerHTML = hasil;
+        });
+    </script>
+</body>
+</html>
